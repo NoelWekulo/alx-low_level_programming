@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * get_endianness - Checks if the machine is little or big endian.
@@ -12,4 +12,22 @@ int get_endianness(void)
 
     /* If the least significant byte is stored first, the machine is little endian */
     return (*c == 1);
+}
+
+int main(void)
+{
+    int endianness;
+
+    endianness = get_endianness();
+
+    if (endianness != 0)
+    {
+        printf("Little Endian\n");
+    }
+    else
+    {
+        printf("Big Endian\n");
+    }
+
+    return (0);
 }
